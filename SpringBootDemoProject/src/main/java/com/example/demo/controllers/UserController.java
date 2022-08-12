@@ -40,4 +40,13 @@ public class UserController {
 
 	}
 
+	@GetMapping(path = "/search") // Path parameter
+	public User getUserByName(@RequestParam(value = "user") User user) {
+
+		return userService.Search(user);
+
+	}
+
+	
+	
 }

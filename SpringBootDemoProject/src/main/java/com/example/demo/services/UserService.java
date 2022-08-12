@@ -54,4 +54,19 @@ public class UserService {
 		return user;
 	}
 
+	public User Search(User user) {
+
+		User user1 = null;
+
+		for (int i : userIdMap.keySet()) {
+			if (userIdMap.get(i).getName().equals(user.getName()) && userIdMap.get(i).getAge() == user.getAge()
+					&& userIdMap.get(i).getHeight() == user.getHeight()
+					&& userIdMap.get(i).getSport().equals(user.getSport())
+					&& userIdMap.get(i).getAuthor().equals(user.getAuthor())) {
+				user1 = userIdMap.get(i);
+			}
+		}
+
+		return user1;
+	}
 }
